@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'sf-regular';
+  src: url('../../public/fonts/SF-Pro-Display-Regular.ttf');
+}
+@font-face {
+  font-family: 'sf-medium';
+  src: url('../../public/fonts/SF-Pro-Display-Medium.ttf');
+}
+@font-face {
+  font-family: 'sf-bold';
+  src: url('../../public/fonts/SF-Pro-Display-Bold.ttf');
+}
