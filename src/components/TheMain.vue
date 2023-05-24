@@ -7,7 +7,7 @@ const descriptions = [
 </script>
 <template>
   <main class="flex flex-col h-full items-center justify-between xl:container mx-auto">
-    <div class="flex items-center justify-end w-full h-full">
+    <div class="flex items-center justify-end w-full h-full bg-orange-300">
       <div class="absolute top-20 left-80">
         <img src="@/assets/doc.svg" alt="Doctor" />
       </div>
