@@ -6,28 +6,28 @@ const descriptions = [
 ]
 </script>
 <template>
-  <main class="flex flex-col h-full items-center justify-between xl:container mx-auto">
-    <div class="flex items-center justify-end w-full h-full bg-orange-300">
-      <div class="absolute top-20 left-80">
+  <main class="mx-auto flex h-full flex-col items-center justify-between xl:container">
+    <div class="flex h-full w-full items-center justify-end">
+      <div class="absolute left-80 top-20">
         <img src="@/assets/doc.svg" alt="Doctor" />
       </div>
       <div class="flex flex-col gap-10">
-        <h1 class="text-6xl font-sfBold max-w-[592px]">
+        <h1 class="max-w-[592px] font-sfBold text-6xl">
           Ko'p tarmoqli tibbiyot klinikalari tarmog'i
         </h1>
-        <p class="text-xl max-w-[522px]">
+        <p class="max-w-[522px] text-xl">
           "Siemens", "Flibs", "Drager", "Karl Storz" kabi brendlar ostida Yevropa sifatidagi eng
           zamonaviy uskunalar bilan jihozlangan
         </p>
         <div class="flex items-center gap-5">
           <a
             href="#"
-            class="flex items-center justify-center border text-[18px] font-sfMedium rounded-[1.25rem] bg-main px-[1.9rem] py-[0.665rem] text-md"
+            class="text-md flex items-center justify-center rounded-[1.25rem] border bg-main px-[1.9rem] py-[0.665rem] font-sfMedium text-[18px]"
             >Xizmatlar haqida
           </a>
           <a
             href="#"
-            class="flex items-center font-sfMedium gap-2 border border-black text-[18px] rounded-[1.25rem] px-6 py-[0.55rem] text-md"
+            class="text-md flex items-center gap-2 rounded-[1.25rem] border border-black px-6 py-[0.55rem] font-sfMedium text-[18px]"
             >Videoni ko'rish
             <img src="@/assets/play.svg" alt="Play" />
           </a>
@@ -35,9 +35,9 @@ const descriptions = [
       </div>
     </div>
     <div
-      class="w-[1090px] mx-auto bg-white flex items-center justify-center rounded-[2.5rem] py-2.5 absolute -bottom-10"
+      class="absolute -bottom-10 mx-auto flex w-[1090px] items-center justify-center rounded-[2.5rem] bg-white py-2.5"
     >
-      <div class="flex items-center justify-between w-full py-1.25 px-12 hover:w-110%">
+      <div class="py-1.25 hover:w-110% flex w-full items-center justify-between px-12">
         <div
           class="flex items-center justify-between gap-7"
           v-for="{ title, icon } in descriptions"
@@ -45,7 +45,7 @@ const descriptions = [
         >
           <img :src="`${icon}`" alt="Sog'liqni saqlash holati haqida to'liq ma'lumot" />
           <div class="relative">
-            <span class="bg-black w-1.5 h-1.5 rounded-full absolute -left-[15px] top-[8px]"></span>
+            <span class="absolute -left-[15px] top-[8px] h-1.5 w-1.5 rounded-full bg-black"></span>
             <p class="w-[200px]">{{ title }}</p>
           </div>
         </div>
