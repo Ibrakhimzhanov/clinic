@@ -21,7 +21,8 @@ module.exports = {
       },
       boxShadow: {
         '3xl':
-          '-5px 76px 31px rgba(191, 191, 191, 0.01), -3px 43px 26px rgba(191, 191, 191, 0.05), -1px 19px 19px rgba(191, 191, 191, 0.09), 0px 5px 10px rgba(191, 191, 191, 0.1), 0px 0px 0px rgba(191, 191, 191, 0.1)'
+          '-5px 76px 31px rgba(191, 191, 191, 0.01), -3px 43px 26px rgba(191, 191, 191, 0.05), -1px 19px 19px rgba(191, 191, 191, 0.09), 0px 5px 10px rgba(191, 191, 191, 0.1), 0px 0px 0px rgba(191, 191, 191, 0.1)',
+        OurShadow: '12.8976px 1px 30px rgba(229, 233, 246, 0.5)'
       }
     }
   },
