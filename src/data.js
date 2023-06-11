@@ -1,13 +1,13 @@
-import place from './assets/service/place.svg'
-import calendar from './assets/service/calendar.svg'
-import doc from './assets/service/doc.svg'
-import medicament from './assets/service/medicament.svg'
-import check from './assets/service/check.svg'
-import location from '/assets/service/location.svg'
+import place from '/src/assets/service/place.svg'
+import calendar from '/src/assets/service/calendar.svg'
+import doc from '/src/assets/service/doc.svg'
+import medicament from '/src/assets/service/medicament.svg'
+import check from '/src/assets/service/check.svg'
+import location from '/src/assets/service/location.svg'
 import barno from '/src/assets/barno.png'
-import natalya from '/assets/natalya.png'
-import zuxra from '/assets/zuxra.png'
-import alisher from '/assets/alisher.png'
+import natalya from '/src/assets/natalya.png'
+import zuxra from '/src/assets/zuxra.png'
+import alisher from '/src/assets/alisher.png'
 
 export const serviceItems = {
   service_01: {
