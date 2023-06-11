@@ -1,13 +1,9 @@
 <script setup>
-import TheHeader from '@/components/TheHeader.vue'
-import TheMainPage from '@/components/TheMainPage.vue'
-import TheFooter from '@/components/TheFooter.vue'
+import TheBaseComponent from '@/components/TheBaseComponent.vue'
 </script>
 
 <template>
-  <TheHeader />
-  <TheMainPage />
-  <main></main>
-
-  <TheFooter />
+  <TheBaseComponent>
+    <router-view />
+  </TheBaseComponent>
 </template>

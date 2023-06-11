@@ -1,10 +1,26 @@
+<script setup>
+import { partners } from '../data.js'
+</script>
 <template>
-  <div class="flex items-center justify-around bg-white shadow-OurShadow">
-    <img src="../assets/ourClients/people.jpg" alt="People" />
-    <img src="../assets/ourClients/med.jpg" alt="Medical" />
-    <img src="../assets/ourClients/cincinnati.jpg" alt="Cincinnati Children" />
-    <img src="../assets/ourClients/northwest.jpg" alt="Northwest Clinicals" />
-    <img src="../assets/ourClients/monash.jpg" alt="MonashHealth" />
-    <img src="../assets/ourClients/shenzen.jpg" alt="Shenzen" />
+  <div
+    class="relative flex min-h-[141px] items-center justify-around overflow-hidden bg-white shadow-OurShadow"
+  >
+    <div class="animate flex h-full w-full items-center justify-around">
+      <img v-for="{ path, alt } in partners" :key="alt" :src="path" :alt="alt" />
+    </div>
   </div>
 </template>
+<style scoped>
+.animate {
+  animation: marquee 10s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+</style>

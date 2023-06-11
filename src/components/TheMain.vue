@@ -1,9 +1,5 @@
 <script setup>
-const descriptions = [
-  { title: "Sog'liqni saqlash holati haqida to'liq ma'lumot.", icon: './src/assets/list.svg' },
-  { title: 'Zamonaviy yuqori aniqlikdagi uskunalar.', icon: './src/assets/medical.svg' },
-  { title: '2 kunlik dasturni qabul qilish imkoniyati.', icon: './src/assets/idea.svg' }
-]
+import { descriptions } from '../data.js'
 </script>
 <template>
   <main class="mx-auto flex h-full flex-col items-center justify-between xl:container">
@@ -43,7 +39,7 @@ const descriptions = [
           v-for="{ title, icon } in descriptions"
           :key="title"
         >
-          <img :src="icon" alt="Sog'liqni saqlash holati haqida to'liq ma'lumot" />
+          <img :src="icon" :alt="title" />
           <div class="relative">
             <span class="absolute -left-[15px] top-[8px] h-1.5 w-1.5 rounded-full bg-black"></span>
             <p class="w-[200px]">{{ title }}</p>

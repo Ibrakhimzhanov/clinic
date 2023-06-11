@@ -28,7 +28,7 @@ function normalizePageHash() {
     <LogoMain />
     <ul class="flex w-2/4 justify-around font-sfMedium">
       <NavItem
-        :href="`#${page}`"
+        :to="`/${page}`"
         v-for="page in navItems"
         :key="page"
         :class="{ 'pointer-events-none border-b border-black': page === currentPage }"
