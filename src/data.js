@@ -3,11 +3,11 @@ import calendar from './assets/service/calendar.svg'
 import doc from './assets/service/doc.svg'
 import medicament from './assets/service/medicament.svg'
 import check from './assets/service/check.svg'
-import location from './assets/service/location.svg'
-import barno from '~@/assets/barno.png'
-import natalya from '~@/assets/natalya.png'
-import zuxra from '~@/assets/zuxra.png'
-import alisher from '~@/assets/alisher.png'
+import location from '/assets/service/location.svg'
+import barno from '/src/assets/barno.png'
+import natalya from '/assets/natalya.png'
+import zuxra from '/assets/zuxra.png'
+import alisher from '/assets/alisher.png'
 
 export const serviceItems = {
   service_01: {
