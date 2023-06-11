@@ -1,6 +1,7 @@
 <script setup>
 import SectionHeading from '@/components/SectionHeading.vue'
 import { serviceItems } from '@/data.js'
+import { SERVICE } from '../constants'
 </script>
 <template>
   <SectionHeading class="mt-32" title="Bizning xizmatlar" />

@@ -23,12 +23,12 @@ function normalizePageHash() {
 
 <template>
   <div
-    class="sticky bottom-0 z-10 mt-5 flex w-full items-center justify-around rounded-[2.5rem] bg-white px-6 py-2.5"
+    class="bottom-0 z-10 mt-5 flex w-full items-center justify-around rounded-[2.5rem] bg-white px-6 py-2.5"
   >
     <LogoMain />
     <ul class="flex w-2/4 justify-around font-sfMedium">
       <NavItem
-        :to="`/${page}`"
+        :href="`#${page}`"
         v-for="page in navItems"
         :key="page"
         :class="{ 'pointer-events-none border-b border-black': page === currentPage }"

@@ -2,7 +2,7 @@
 import arrowD from '@/assets/arrow-dark.svg'
 defineProps({
   item: {
-    type: String,
+    type: Object,
     required: true
   }
 })

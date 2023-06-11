@@ -49,7 +49,9 @@ const activeProfession = ref('Barcha shifokorlar')
             berib, odamlarga yordam bering. . . . .
           </div>
           <div class="mt-6 flex gap-4">
-            <a href="#" class="text-cGray group-hover:text-cBlack">Batafsil</a>
+            <router-link to="/FindDoctorInfo" class="text-cGray group-hover:text-cBlack"
+              >Batafsil</router-link
+            >
             <img
               class="text-cGray group-hover:text-cBlack"
               src="../assets/service/arrow.svg"

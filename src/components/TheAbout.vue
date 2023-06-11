@@ -1,9 +1,10 @@
 <script setup>
 import SectionHeading from '@/components/SectionHeading.vue'
+import { ABOUT } from '../constants'
 </script>
 
 <template>
-  <SectionHeading title="Biz haqimizda" />
+  <SectionHeading :id="ABOUT" title="Biz haqimizda" />
   <div class="m-auto flex max-w-[1060px] items-center justify-between">
     <div class="flex flex-col items-start justify-between gap-10 font-sfBold">
       <h6 class="text-2xl text-cGray">Clinika nomi</h6>

@@ -2,7 +2,7 @@
 import SectionHeading from '@/components/SectionHeading.vue'
 import 'vue3-carousel/dist/carousel.css'
 import { Carousel, Slide, Navigation } from 'vue3-carousel'
-
+import { ARTICLES } from '../constants'
 const cards = [
   {
     id: 0,
@@ -63,7 +63,7 @@ const breakpoints = {
 //
 </script>
 <template>
-  <SectionHeading title="Maqolalar" />
+  <SectionHeading :id="ARTICLES" title="Maqolalar" />
   <Carousel :settings="settings" :wrap-around="true" :items-to-show="4">
     <slide v-for="{ id, label, title, subtitle, text } in cards" :key="id">
       <div class="carousel__item">

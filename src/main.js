@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import MainPage from './components/TheMainPage.vue'
 import FindDoctor from './pages/FindDoctor.vue'
-import TheService from '@/components/TheService.vue'
+import FindDoctorInfo from './pages/FindDoctorInfo.vue'
 // import TheOurPartner from '@/components/TheOurPartner.vue'
 // import TheAbout from '@/components/TheAbout.vue'
 // import ThePersonal from '@/components/ThePersonal.vue'
@@ -17,16 +17,18 @@ const router = createRouter({
   routes: [
     {
       path: '/',
+      name: 'Home',
       component: MainPage
-    },
-    {
-      path: '/service',
-      component: TheService
     },
     {
       path: '/findDoctor',
       name: 'Shifokor Topish',
       component: FindDoctor
+    },
+    {
+      path: '/findDoctorInfo',
+      name: 'Shifokor Batafsil',
+      component: FindDoctorInfo
     }
   ],
   history: createWebHistory()

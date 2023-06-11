@@ -14,7 +14,7 @@ import TheMain from './TheMain.vue'
     <!-- <TheHeader /> -->
     <TheMain />
   </div>
-  <TheService />
+  <TheService  />
   <TheOurPartner />
   <ThePersonal />
   <TheAbout />

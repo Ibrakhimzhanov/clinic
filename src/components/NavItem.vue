@@ -5,8 +5,8 @@ export default {
 </script>
 <template>
   <li>
-    <router-link v-bind="$attrs">
+    <a v-bind="$attrs">
       <slot></slot>
-    </router-link>
+    </a>
   </li>
 </template>
