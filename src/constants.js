@@ -1,0 +1,6 @@
+export const MAIN = 'Asosiy'
+export const SERVICE = 'Xizmatlar'
+export const FEEDBACK = 'Sharhlar'
+export const FIND_DOCTOR = 'Shifokor topish'
+export const ARTICLES = 'Maqolalar'
+export const ABOUT = 'Biz haqimizda'

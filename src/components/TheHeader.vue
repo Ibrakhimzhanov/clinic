@@ -1,8 +1,8 @@
 <script setup>
-import TheNavbar from './TheNavbar.vue'
+import TheNav from './TheNav.vue'
 </script>
 <template>
-  <header class="flex items-center justify-center xl:container mx-auto">
-    <TheNavbar />
+  <header class="sticky mx-auto flex items-center justify-center xl:container">
+    <TheNav />
   </header>
 </template>
