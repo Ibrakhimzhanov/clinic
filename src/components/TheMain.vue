@@ -43,7 +43,7 @@ const descriptions = [
           v-for="{ title, icon } in descriptions"
           :key="title"
         >
-          <img :src="`${icon}`" alt="Sog'liqni saqlash holati haqida to'liq ma'lumot" />
+          <img :src="icon" alt="Sog'liqni saqlash holati haqida to'liq ma'lumot" />
           <div class="relative">
             <span class="absolute -left-[15px] top-[8px] h-1.5 w-1.5 rounded-full bg-black"></span>
             <p class="w-[200px]">{{ title }}</p>

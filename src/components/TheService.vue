@@ -1,6 +1,6 @@
 <script setup>
 import SectionHeading from '@/components/SectionHeading.vue'
-import serviceItems from '@/data.js'
+import { serviceItems } from '@/data.js'
 </script>
 <template>
   <SectionHeading class="mt-32" title="Bizning xizmatlar" />
@@ -15,7 +15,7 @@ import serviceItems from '@/data.js'
       >
         <h6>{{ label }}</h6>
         <!-- <component :is="path" class="h-6 w-6" :alt="`Service_${icon}`" />? -->
-        <img :src="`assets/service/${icon}.svg`" :alt="`Service_name_${icon}`" />
+        <img :src="icon" :alt="`Service_name_${icon}`" />
       </div>
       <p class="w-[229px] font-sfMedium text-lg">
         {{ title }}

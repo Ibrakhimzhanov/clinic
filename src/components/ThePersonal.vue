@@ -1,32 +1,7 @@
 <script setup>
 import SectionHeading from '@/components/SectionHeading.vue'
-// import Barno from '../assets/Barno.png'
-// import Natalya from '../assets/Natalya.png'
-// import Zuxra from '../assets/Zuxra.png'
-// import Alisher from '../assets/Alisher.png'
+import { personals } from '../data.js'
 import arrowD from '../assets/arrow-dark.svg'
-const personals = [
-  {
-    path: 'barno',
-    name: 'Barno Odilova',
-    category: 'Ginekolog'
-  },
-  {
-    path: 'Natalya',
-    name: ' Levina',
-    category: 'Ortodont'
-  },
-  {
-    path: 'Zuxra',
-    name: 'Zuxra Tolipova',
-    category: 'Okulist'
-  },
-  {
-    path: 'Alisher',
-    name: 'Alisher Kurbanov',
-    category: 'Travmatolog'
-  }
-]
 </script>
 <template>
   <SectionHeading title="Shifokor topish" />
@@ -37,7 +12,7 @@ const personals = [
         :key="name"
         class="flex flex-col items-center"
       >
-        <img :src="`src/assets/${path}.png`" :alt="name" />
+        <img :src="path" :alt="name" />
         <div
           class="relative bottom-10 left-[0%] flex w-[203px] items-center justify-between rounded-xl bg-white px-3 py-1.5"
         >
