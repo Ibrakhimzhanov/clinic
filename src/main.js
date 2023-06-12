@@ -1,9 +1,10 @@
 import { createApp } from 'vue'
-import App from './App.vue'
-import MainPage from './components/TheMainPage.vue'
-import FindDoctor from './pages/FindDoctor.vue'
-import FindDoctorInfo from './pages/FindDoctorInfo.vue'
-import FindDoctorAppointment from './pages/FindDoctorAppointment.vue'
+import App from '@/App.vue'
+import '@/assets/main.css'
+// import MainPage from '@/components/TheMainPage.vue'
+// import FindDoctor from '@/pages/FindDoctor.vue'
+// import FindDoctorInfo from '@/pages/FindDoctorInfo.vue'
+// import FindDoctorAppointment from '@/pages/FindDoctorAppointment.vue'
 // import TheOurPartner from '@/components/TheOurPartner.vue'
 // import TheAbout from '@/components/TheAbout.vue'
 // import ThePersonal from '@/components/ThePersonal.vue'
@@ -11,65 +12,64 @@ import FindDoctorAppointment from './pages/FindDoctorAppointment.vue'
 // import TheArticles from '@/components/TheArticles.vue'
 // import TheFeedback from '@/components/TheFeedback.vue'
 // import TheContacts from '@/components/TheContacts.vue'
-import '@/assets/main.css'
-import { createRouter, createWebHistory } from 'vue-router'
+// import { createRouter, createWebHistory } from 'vue-router'
 
-const router = createRouter({
-  routes: [
-    {
-      path: '/',
-      name: 'Home',
-      component: MainPage
-    },
-    {
-      path: '/#Asosiy',
-      name: 'Asosiy',
-      component: MainPage
-    },
-    {
-      path: '/#Xizmatlar',
-      name: 'Xizmatlar',
-      component: MainPage
-    },
-    {
-      path: '/#Sharhlar',
-      name: 'Sharhlar',
-      component: MainPage
-    },
-    {
-      path: '/#Shifokor%20topish',
-      name: 'Shifokor topish',
-      component: MainPage
-    },
-    {
-      path: '/#Maqolalar',
-      name: 'Maqolalar',
-      component: MainPage
-    },
-    {
-      path: '/#Biz%20haqimizda',
-      name: 'Biz haqimizda',
-      component: MainPage
-    },
-    {
-      path: '/findDoctor',
-      name: 'Shifokor Topish',
-      component: FindDoctor
-    },
-    {
-      path: '/findDoctorInfo',
-      name: 'Shifokor Batafsil',
-      component: FindDoctorInfo
-    },
-    {
-      path: '/findDoctorAppointment',
-      name: 'Shifokor Qabuliga yozilish',
-      component: FindDoctorAppointment
-    }
-  ],
-  history: createWebHistory()
-})
+// const router = createRouter({
+//   routes: [
+//     {
+//       path: '/',
+//       name: 'Home',
+//       component: MainPage
+//     },
+//     {
+//       path: '/#Asosiy',
+//       name: 'Asosiy',
+//       component: MainPage
+//     },
+//     {
+//       path: '/#Xizmatlar',
+//       name: 'Xizmatlar',
+//       component: MainPage
+//     },
+//     {
+//       path: '/#Sharhlar',
+//       name: 'Sharhlar',
+//       component: MainPage
+//     },
+//     {
+//       path: '/#Shifokor%20topish',
+//       name: 'Shifokor topish',
+//       component: MainPage
+//     },
+//     {
+//       path: '/#Maqolalar',
+//       name: 'Maqolalar',
+//       component: MainPage
+//     },
+//     {
+//       path: '/#Biz%20haqimizda',
+//       name: 'Biz haqimizda',
+//       component: MainPage
+//     },
+//     {
+//       path: '/findDoctor',
+//       name: 'Shifokor Topish',
+//       component: FindDoctor
+//     },
+//     {
+//       path: '/findDoctorInfo',
+//       name: 'Shifokor Batafsil',
+//       component: FindDoctorInfo
+//     },
+//     {
+//       path: '/findDoctorAppointment',
+//       name: 'Shifokor Qabuliga yozilish',
+//       component: FindDoctorAppointment
+//     }
+//   ],
+//   history: createWebHistory()
+// })
 
 const app = createApp(App)
-app.use(router)
+// app.use(router)
 app.mount('#app')

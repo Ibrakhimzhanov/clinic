@@ -1,9 +1,12 @@
 <script setup>
 import TheBaseComponent from '@/components/TheBaseComponent.vue'
+// import TheMain from '@/components/TheMain.vue'
+import TheMainPage from './components/TheMainPage.vue'
 </script>
 
 <template>
   <TheBaseComponent>
-    <router-view />
+    <TheMainPage />
+    <!-- <router-view /> -->
   </TheBaseComponent>
 </template>

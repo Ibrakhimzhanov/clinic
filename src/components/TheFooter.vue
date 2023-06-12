@@ -13,10 +13,10 @@ import LogoMain from './LogoMain.vue'
         <span class="max-w-[298px]">Download the app by clicking the link below :</span>
         <div class="flex gap-10">
           <a href="#">
-            <img src="../assets/google.jpg" alt="Google Play" />
+            <img src="@/assets/google.jpg" alt="Google Play" />
           </a>
           <a href="#">
-            <img src="../assets/apple.jpg" alt="App Store" />
+            <img src="@/assets/apple.jpg" alt="App Store" />
           </a>
         </div>
       </div>
@@ -25,16 +25,16 @@ import LogoMain from './LogoMain.vue'
       <h6 class="text-lg">Social media</h6>
       <div class="flex items-center gap-5">
         <a href="#">
-          <img src="../assets/facebook.svg" alt="Facebook" />
+          <img src="@/assets/facebook.svg" alt="Facebook" />
         </a>
         <a href="#">
-          <img src="../assets/twitter.svg" alt="Twitter" />
+          <img src="@/assets/twitter.svg" alt="Twitter" />
         </a>
         <a href="#">
-          <img src="../assets/linkedin.svg" alt="LinkedIn" />
+          <img src="@/assets/linkedin.svg" alt="LinkedIn" />
         </a>
         <a href="#">
-          <img src="../assets/instagram.svg" alt="Instagram" />
+          <img src="@/assets/instagram.svg" alt="Instagram" />
         </a>
       </div>
       <span class="mt-10 text-lg"

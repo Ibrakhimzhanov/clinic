@@ -1,0 +1,1737 @@
+<html lang="en">
+  <head>
+    <script type="module" src="/@vite/client"></script>
+
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clinic Web Site</title>
+    <style
+      type="text/css"
+      data-vite-dev-id="K:/Coding/clinic/src/components/TheOurPartner.vue?vue&amp;type=style&amp;index=0&amp;scoped=4244b31b&amp;lang.css"
+    >
+      .animate[data-v-4244b31b] {
+        animation: marquee-4244b31b 10s linear infinite;
+      }
+      @keyframes marquee-4244b31b {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+    </style>
+    <style
+      type="text/css"
+      data-vite-dev-id="K:/Coding/clinic/node_modules/vue3-carousel/dist/carousel.css"
+    >
+      :root {
+        /* Color */
+        --vc-clr-primary: #000;
+        --vc-clr-secondary: #090f207f;
+        --vc-clr-white: #ffffff;
+
+        /* Icon */
+        --vc-icn-width: 1.2em;
+
+        /* Navigation */
+        --vc-nav-width: 30px;
+        --vc-nav-height: 30px;
+        --vc-nav-border-radius: 0;
+        --vc-nav-color: var(--vc-clr-primary);
+        --vc-nav-color-hover: var(--vc-clr-secondary);
+        --vc-nav-background: transparent;
+
+        /* Pagination */
+        --vc-pgn-width: 12px;
+        --vc-pgn-height: 4px;
+        --vc-pgn-margin: 4px;
+        --vc-pgn-border-radius: 0;
+        --vc-pgn-background-color: var(--vc-clr-secondary);
+        --vc-pgn-active-color: var(--vc-clr-primary);
+      }
+      .carousel__prev,
+      .carousel__next {
+        box-sizing: content-box;
+        background: var(--vc-nav-background);
+        border-radius: var(--vc-nav-border-radius);
+        width: var(--vc-nav-width);
+        height: var(--vc-nav-height);
+        text-align: center;
+        font-size: var(--vc-nav-height);
+        padding: 0;
+        color: var(--vc-nav-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        border: 0;
+        cursor: pointer;
+        margin: 0 10px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .carousel__prev:hover,
+      .carousel__next:hover {
+        color: var(--vc-nav-color-hover);
+      }
+
+      .carousel__next--disabled,
+      .carousel__prev--disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+      }
+
+      .carousel__prev {
+        left: 0;
+      }
+
+      .carousel__next {
+        right: 0;
+      }
+
+      .carousel--rtl .carousel__prev {
+        left: auto;
+        right: 0;
+      }
+
+      .carousel--rtl .carousel__next {
+        right: auto;
+        left: 0;
+      }
+      .carousel {
+        position: relative;
+        text-align: center;
+        box-sizing: border-box;
+        touch-action: pan-y;
+        overscroll-behavior: none;
+      }
+
+      .carousel.is-dragging {
+        touch-action: none;
+      }
+
+      .carousel * {
+        box-sizing: border-box;
+      }
+
+      .carousel__track {
+        display: flex;
+        padding: 0 !important;
+        position: relative;
+      }
+
+      .carousel__viewport {
+        overflow: hidden;
+      }
+
+      .carousel__sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+      }
+      .carousel__icon {
+        width: var(--vc-icn-width);
+        height: var(--vc-icn-width);
+        fill: currentColor;
+      }
+      .carousel__pagination {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        line-height: 0;
+        margin: 10px 0 0;
+      }
+
+      .carousel__pagination-button {
+        display: block;
+        border: 0;
+        margin: 0;
+        cursor: pointer;
+        padding: var(--vc-pgn-margin);
+        background: transparent;
+      }
+
+      .carousel__pagination-button::after {
+        display: block;
+        content: '';
+        width: var(--vc-pgn-width);
+        height: var(--vc-pgn-height);
+        border-radius: var(--vc-pgn-border-radius);
+        background-color: var(--vc-pgn-background-color);
+      }
+
+      .carousel__pagination-button:hover::after,
+      .carousel__pagination-button--active::after {
+        background-color: var(--vc-pgn-active-color);
+      }
+      .carousel__slide {
+        scroll-snap-stop: auto;
+        flex-shrink: 0;
+        margin: 0;
+        position: relative;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        /* Fix iOS scrolling #22 */
+        transform: translateZ(0);
+      }
+    </style>
+    <style
+      type="text/css"
+      data-vite-dev-id="K:/Coding/clinic/src/components/TheArticles.vue?vue&amp;type=style&amp;index=0&amp;lang.css"
+    >
+      .carousel {
+        max-width: 1176px;
+        margin: 0 auto;
+      }
+      .carousel__slide {
+        padding: 5px;
+      }
+      .carousel__viewport {
+        perspective: 2000px;
+      }
+      .carousel__track {
+        transform-style: preserve-3d;
+      }
+      .carousel__slide--sliding {
+        transition: 0.5s;
+      }
+      .carousel__slide {
+        opacity: 0.9;
+        transform: rotateY(-20deg) scale(0.9);
+        border: 1px solid #f8f4ff;
+        border-radius: 10px;
+      }
+      .carousel__slide--active ~ .carousel__slide {
+        transform: rotateY(20deg) scale(0.9);
+      }
+      .carousel__slide--prev {
+        opacity: 1;
+        transform: rotateY(-10deg) scale(0.95);
+      }
+      .carousel__slide--next {
+        opacity: 1;
+        transform: rotateY(10deg) scale(0.95);
+      }
+      .carousel__slide--active {
+        opacity: 1;
+        transform: rotateY(0) scale(1.1);
+        box-shadow: -5px 76px 31px rgba(191, 191, 191, 0.01),
+          -3px 43px 26px rgba(191, 191, 191, 0.05), -1px 19px 19px rgba(191, 191, 191, 0.09),
+          0px 5px 10px rgba(191, 191, 191, 0.1), 0px 0px 0px rgba(191, 191, 191, 0.1);
+      }
+      .carousel__item {
+        /* background: red; */
+        display: flex;
+        width: 240px;
+        border-radius: 8px;
+        justify-content: center;
+        align-items: center;
+      }
+      .carousel__prev,
+      .carousel__next {
+        width: 49px;
+        height: 49px;
+        border: 3px solid #000;
+        box-sizing: content-box;
+        border-radius: 100%;
+      }
+      .carousel__prev {
+        left: -100px;
+        bottom: 0px;
+      }
+      .carousel__next {
+        left: -100px;
+        top: 110px;
+      }
+    </style>
+    <style
+      type="text/css"
+      data-vite-dev-id="K:/Coding/clinic/src/components/TheContacts.vue?vue&amp;type=style&amp;index=0&amp;scoped=d261a681&amp;lang.css"
+    >
+      .v-collapse[data-v-d261a681] {
+        transition: height 300ms cubic-bezier(0.3, 0, 0.6, 1);
+      }
+    </style>
+    <style type="text/css" data-vite-dev-id="K:/Coding/clinic/src/assets/main.css">
+      /*
+! tailwindcss v3.3.2 | MIT License | https://tailwindcss.com
+*/ /*
+1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+*/
+
+      *,
+      ::before,
+      ::after {
+        box-sizing: border-box; /* 1 */
+        border-width: 0; /* 2 */
+        border-style: solid; /* 2 */
+        border-color: #e5e7eb; /* 2 */
+      }
+
+      ::before,
+      ::after {
+        --tw-content: '';
+      }
+
+      /*
+1. Use a consistent sensible line-height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+3. Use a more readable tab size.
+4. Use the user's configured `sans` font-family by default.
+5. Use the user's configured `sans` font-feature-settings by default.
+6. Use the user's configured `sans` font-variation-settings by default.
+*/
+
+      html {
+        line-height: 1.5; /* 1 */
+        -webkit-text-size-adjust: 100%; /* 2 */
+        -moz-tab-size: 4; /* 3 */
+        -o-tab-size: 4;
+        tab-size: 4; /* 3 */
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+          'Segoe UI Symbol', 'Noto Color Emoji'; /* 4 */
+        font-feature-settings: normal; /* 5 */
+        font-variation-settings: normal; /* 6 */
+      }
+
+      /*
+1. Remove the margin in all browsers.
+2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
+*/
+
+      body {
+        margin: 0; /* 1 */
+        line-height: inherit; /* 2 */
+      }
+
+      /*
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+3. Ensure horizontal rules are visible by default.
+*/
+
+      hr {
+        height: 0; /* 1 */
+        color: inherit; /* 2 */
+        border-top-width: 1px; /* 3 */
+      }
+
+      /*
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+
+      abbr:where([title]) {
+        -webkit-text-decoration: underline dotted;
+        text-decoration: underline dotted;
+      }
+
+      /*
+Remove the default font size and weight for headings.
+*/
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-size: inherit;
+        font-weight: inherit;
+      }
+
+      /*
+Reset links to optimize for opt-in styling instead of opt-out.
+*/
+
+      a {
+        color: inherit;
+        text-decoration: inherit;
+      }
+
+      /*
+Add the correct font weight in Edge and Safari.
+*/
+
+      b,
+      strong {
+        font-weight: bolder;
+      }
+
+      /*
+1. Use the user's configured `mono` font family by default.
+2. Correct the odd `em` font sizing in all browsers.
+*/
+
+      code,
+      kbd,
+      samp,
+      pre {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+          'Courier New', monospace; /* 1 */
+        font-size: 1em; /* 2 */
+      }
+
+      /*
+Add the correct font size in all browsers.
+*/
+
+      small {
+        font-size: 80%;
+      }
+
+      /*
+Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+*/
+
+      sub,
+      sup {
+        font-size: 75%;
+        line-height: 0;
+        position: relative;
+        vertical-align: baseline;
+      }
+
+      sub {
+        bottom: -0.25em;
+      }
+
+      sup {
+        top: -0.5em;
+      }
+
+      /*
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+3. Remove gaps between table borders by default.
+*/
+
+      table {
+        text-indent: 0; /* 1 */
+        border-color: inherit; /* 2 */
+        border-collapse: collapse; /* 3 */
+      }
+
+      /*
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+3. Remove default padding in all browsers.
+*/
+
+      button,
+      input,
+      optgroup,
+      select,
+      textarea {
+        font-family: inherit; /* 1 */
+        font-size: 100%; /* 1 */
+        font-weight: inherit; /* 1 */
+        line-height: inherit; /* 1 */
+        color: inherit; /* 1 */
+        margin: 0; /* 2 */
+        padding: 0; /* 3 */
+      }
+
+      /*
+Remove the inheritance of text transform in Edge and Firefox.
+*/
+
+      button,
+      select {
+        text-transform: none;
+      }
+
+      /*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Remove default button styles.
+*/
+
+      button,
+      [type='button'],
+      [type='reset'],
+      [type='submit'] {
+        -webkit-appearance: button; /* 1 */
+        background-color: transparent; /* 2 */
+        background-image: none; /* 2 */
+      }
+
+      /*
+Use the modern Firefox focus style for all focusable elements.
+*/
+
+      :-moz-focusring {
+        outline: auto;
+      }
+
+      /*
+Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
+*/
+
+      :-moz-ui-invalid {
+        box-shadow: none;
+      }
+
+      /*
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+
+      progress {
+        vertical-align: baseline;
+      }
+
+      /*
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+
+      ::-webkit-inner-spin-button,
+      ::-webkit-outer-spin-button {
+        height: auto;
+      }
+
+      /*
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+
+      [type='search'] {
+        -webkit-appearance: textfield; /* 1 */
+        outline-offset: -2px; /* 2 */
+      }
+
+      /*
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+
+      ::-webkit-search-decoration {
+        -webkit-appearance: none;
+      }
+
+      /*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to `inherit` in Safari.
+*/
+
+      ::-webkit-file-upload-button {
+        -webkit-appearance: button; /* 1 */
+        font: inherit; /* 2 */
+      }
+
+      /*
+Add the correct display in Chrome and Safari.
+*/
+
+      summary {
+        display: list-item;
+      }
+
+      /*
+Removes the default spacing and border for appropriate elements.
+*/
+
+      blockquote,
+      dl,
+      dd,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      hr,
+      figure,
+      p,
+      pre {
+        margin: 0;
+      }
+
+      fieldset {
+        margin: 0;
+        padding: 0;
+      }
+
+      legend {
+        padding: 0;
+      }
+
+      ol,
+      ul,
+      menu {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      /*
+Prevent resizing textareas horizontally by default.
+*/
+
+      textarea {
+        resize: vertical;
+      }
+
+      /*
+1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
+2. Set the default placeholder color to the user's configured gray 400 color.
+*/
+
+      input::-moz-placeholder,
+      textarea::-moz-placeholder {
+        opacity: 1; /* 1 */
+        color: #9ca3af; /* 2 */
+      }
+
+      input::placeholder,
+      textarea::placeholder {
+        opacity: 1; /* 1 */
+        color: #9ca3af; /* 2 */
+      }
+
+      /*
+Set the default cursor for buttons.
+*/
+
+      button,
+      [role='button'] {
+        cursor: pointer;
+      }
+
+      /*
+Make sure disabled buttons don't get the pointer cursor.
+*/
+      :disabled {
+        cursor: default;
+      }
+
+      /*
+1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
+2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
+   This can trigger a poorly considered lint error in some tools but is included by design.
+*/
+
+      img,
+      svg,
+      video,
+      canvas,
+      audio,
+      iframe,
+      embed,
+      object {
+        display: block; /* 1 */
+        vertical-align: middle; /* 2 */
+      }
+
+      /*
+Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
+*/
+
+      img,
+      video {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* Make elements with the HTML hidden attribute stay hidden by default */
+      [hidden] {
+        display: none;
+      }
+
+      *,
+      ::before,
+      ::after {
+        --tw-border-spacing-x: 0;
+        --tw-border-spacing-y: 0;
+        --tw-translate-x: 0;
+        --tw-translate-y: 0;
+        --tw-rotate: 0;
+        --tw-skew-x: 0;
+        --tw-skew-y: 0;
+        --tw-scale-x: 1;
+        --tw-scale-y: 1;
+        --tw-pan-x: ;
+        --tw-pan-y: ;
+        --tw-pinch-zoom: ;
+        --tw-scroll-snap-strictness: proximity;
+        --tw-gradient-from-position: ;
+        --tw-gradient-via-position: ;
+        --tw-gradient-to-position: ;
+        --tw-ordinal: ;
+        --tw-slashed-zero: ;
+        --tw-numeric-figure: ;
+        --tw-numeric-spacing: ;
+        --tw-numeric-fraction: ;
+        --tw-ring-inset: ;
+        --tw-ring-offset-width: 0px;
+        --tw-ring-offset-color: #fff;
+        --tw-ring-color: rgb(59 130 246 / 0.5);
+        --tw-ring-offset-shadow: 0 0 #0000;
+        --tw-ring-shadow: 0 0 #0000;
+        --tw-shadow: 0 0 #0000;
+        --tw-shadow-colored: 0 0 #0000;
+        --tw-blur: ;
+        --tw-brightness: ;
+        --tw-contrast: ;
+        --tw-grayscale: ;
+        --tw-hue-rotate: ;
+        --tw-invert: ;
+        --tw-saturate: ;
+        --tw-sepia: ;
+        --tw-drop-shadow: ;
+        --tw-backdrop-blur: ;
+        --tw-backdrop-brightness: ;
+        --tw-backdrop-contrast: ;
+        --tw-backdrop-grayscale: ;
+        --tw-backdrop-hue-rotate: ;
+        --tw-backdrop-invert: ;
+        --tw-backdrop-opacity: ;
+        --tw-backdrop-saturate: ;
+        --tw-backdrop-sepia: ;
+      }
+
+      ::backdrop {
+        --tw-border-spacing-x: 0;
+        --tw-border-spacing-y: 0;
+        --tw-translate-x: 0;
+        --tw-translate-y: 0;
+        --tw-rotate: 0;
+        --tw-skew-x: 0;
+        --tw-skew-y: 0;
+        --tw-scale-x: 1;
+        --tw-scale-y: 1;
+        --tw-pan-x: ;
+        --tw-pan-y: ;
+        --tw-pinch-zoom: ;
+        --tw-scroll-snap-strictness: proximity;
+        --tw-gradient-from-position: ;
+        --tw-gradient-via-position: ;
+        --tw-gradient-to-position: ;
+        --tw-ordinal: ;
+        --tw-slashed-zero: ;
+        --tw-numeric-figure: ;
+        --tw-numeric-spacing: ;
+        --tw-numeric-fraction: ;
+        --tw-ring-inset: ;
+        --tw-ring-offset-width: 0px;
+        --tw-ring-offset-color: #fff;
+        --tw-ring-color: rgb(59 130 246 / 0.5);
+        --tw-ring-offset-shadow: 0 0 #0000;
+        --tw-ring-shadow: 0 0 #0000;
+        --tw-shadow: 0 0 #0000;
+        --tw-shadow-colored: 0 0 #0000;
+        --tw-blur: ;
+        --tw-brightness: ;
+        --tw-contrast: ;
+        --tw-grayscale: ;
+        --tw-hue-rotate: ;
+        --tw-invert: ;
+        --tw-saturate: ;
+        --tw-sepia: ;
+        --tw-drop-shadow: ;
+        --tw-backdrop-blur: ;
+        --tw-backdrop-brightness: ;
+        --tw-backdrop-contrast: ;
+        --tw-backdrop-grayscale: ;
+        --tw-backdrop-hue-rotate: ;
+        --tw-backdrop-invert: ;
+        --tw-backdrop-opacity: ;
+        --tw-backdrop-saturate: ;
+        --tw-backdrop-sepia: ;
+      }
+      .pointer-events-none {
+        pointer-events: none;
+      }
+      .absolute {
+        position: absolute;
+      }
+      .relative {
+        position: relative;
+      }
+      .-bottom-10 {
+        bottom: -2.5rem;
+      }
+      .-left-\[15px\] {
+        left: -15px;
+      }
+      .bottom-0 {
+        bottom: 0px;
+      }
+      .bottom-10 {
+        bottom: 2.5rem;
+      }
+      .bottom-20 {
+        bottom: 5rem;
+      }
+      .left-80 {
+        left: 20rem;
+      }
+      .left-\[0\%\] {
+        left: 0%;
+      }
+      .top-20 {
+        top: 5rem;
+      }
+      .top-\[8px\] {
+        top: 8px;
+      }
+      .z-10 {
+        z-index: 10;
+      }
+      .m-0 {
+        margin: 0px;
+      }
+      .m-1 {
+        margin: 0.25rem;
+      }
+      .m-1\.5 {
+        margin: 0.375rem;
+      }
+      .m-auto {
+        margin: auto;
+      }
+      .mx-auto {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .my-28 {
+        margin-top: 7rem;
+        margin-bottom: 7rem;
+      }
+      .my-5 {
+        margin-top: 1.25rem;
+        margin-bottom: 1.25rem;
+      }
+      .my-\[110px\] {
+        margin-top: 110px;
+        margin-bottom: 110px;
+      }
+      .mb-11 {
+        margin-bottom: 2.75rem;
+      }
+      .mb-12 {
+        margin-bottom: 3rem;
+      }
+      .ml-5 {
+        margin-left: 1.25rem;
+      }
+      .mt-10 {
+        margin-top: 2.5rem;
+      }
+      .mt-12 {
+        margin-top: 3rem;
+      }
+      .mt-20 {
+        margin-top: 5rem;
+      }
+      .mt-32 {
+        margin-top: 8rem;
+      }
+      .mt-5 {
+        margin-top: 1.25rem;
+      }
+      .mt-6 {
+        margin-top: 1.5rem;
+      }
+      .flex {
+        display: flex;
+      }
+      .h-1 {
+        height: 0.25rem;
+      }
+      .h-1\.5 {
+        height: 0.375rem;
+      }
+      .h-6 {
+        height: 1.5rem;
+      }
+      .h-\[100px\] {
+        height: 100px;
+      }
+      .h-\[150px\] {
+        height: 150px;
+      }
+      .h-\[473px\] {
+        height: 473px;
+      }
+      .h-\[500px\] {
+        height: 500px;
+      }
+      .h-\[650px\] {
+        height: 650px;
+      }
+      .h-full {
+        height: 100%;
+      }
+      .min-h-\[141px\] {
+        min-height: 141px;
+      }
+      .w-1 {
+        width: 0.25rem;
+      }
+      .w-1\.5 {
+        width: 0.375rem;
+      }
+      .w-2\/4 {
+        width: 50%;
+      }
+      .w-3\/4 {
+        width: 75%;
+      }
+      .w-6 {
+        width: 1.5rem;
+      }
+      .w-\[1090px\] {
+        width: 1090px;
+      }
+      .w-\[11px\] {
+        width: 11px;
+      }
+      .w-\[1310px\] {
+        width: 1310px;
+      }
+      .w-\[200px\] {
+        width: 200px;
+      }
+      .w-\[203px\] {
+        width: 203px;
+      }
+      .w-\[229px\] {
+        width: 229px;
+      }
+      .w-\[240px\] {
+        width: 240px;
+      }
+      .w-\[320px\] {
+        width: 320px;
+      }
+      .w-\[650px\] {
+        width: 650px;
+      }
+      .w-full {
+        width: 100%;
+      }
+      .max-w-\[1060px\] {
+        max-width: 1060px;
+      }
+      .max-w-\[1090px\] {
+        max-width: 1090px;
+      }
+      .max-w-\[237px\] {
+        max-width: 237px;
+      }
+      .max-w-\[298px\] {
+        max-width: 298px;
+      }
+      .max-w-\[320px\] {
+        max-width: 320px;
+      }
+      .max-w-\[365px\] {
+        max-width: 365px;
+      }
+      .max-w-\[430px\] {
+        max-width: 430px;
+      }
+      .max-w-\[522px\] {
+        max-width: 522px;
+      }
+      .max-w-\[542px\] {
+        max-width: 542px;
+      }
+      .max-w-\[592px\] {
+        max-width: 592px;
+      }
+      .max-w-\[611px\] {
+        max-width: 611px;
+      }
+      .grow {
+        flex-grow: 1;
+      }
+      .transform {
+        transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate))
+          skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x))
+          scaleY(var(--tw-scale-y));
+      }
+      .flex-col {
+        flex-direction: column;
+      }
+      .flex-wrap {
+        flex-wrap: wrap;
+      }
+      .items-start {
+        align-items: flex-start;
+      }
+      .items-end {
+        align-items: flex-end;
+      }
+      .items-center {
+        align-items: center;
+      }
+      .justify-start {
+        justify-content: flex-start;
+      }
+      .justify-end {
+        justify-content: flex-end;
+      }
+      .justify-center {
+        justify-content: center;
+      }
+      .justify-between {
+        justify-content: space-between;
+      }
+      .justify-around {
+        justify-content: space-around;
+      }
+      .gap-1 {
+        gap: 0.25rem;
+      }
+      .gap-10 {
+        gap: 2.5rem;
+      }
+      .gap-12 {
+        gap: 3rem;
+      }
+      .gap-2 {
+        gap: 0.5rem;
+      }
+      .gap-4 {
+        gap: 1rem;
+      }
+      .gap-5 {
+        gap: 1.25rem;
+      }
+      .gap-7 {
+        gap: 1.75rem;
+      }
+      .overflow-hidden {
+        overflow: hidden;
+      }
+      .rounded-2xl {
+        border-radius: 1rem;
+      }
+      .rounded-3xl {
+        border-radius: 1.5rem;
+      }
+      .rounded-\[1\.25rem\] {
+        border-radius: 1.25rem;
+      }
+      .rounded-\[15px\] {
+        border-radius: 15px;
+      }
+      .rounded-\[2\.5rem\] {
+        border-radius: 2.5rem;
+      }
+      .rounded-\[20px\] {
+        border-radius: 20px;
+      }
+      .rounded-\[3rem\] {
+        border-radius: 3rem;
+      }
+      .rounded-\[40px\] {
+        border-radius: 40px;
+      }
+      .rounded-full {
+        border-radius: 9999px;
+      }
+      .rounded-xl {
+        border-radius: 0.75rem;
+      }
+      .rounded-b-none {
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+      }
+      .rounded-t-\[50px\] {
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+      }
+      .rounded-tr-\[50px\] {
+        border-top-right-radius: 50px;
+      }
+      .border {
+        border-width: 1px;
+      }
+      .border-b {
+        border-bottom-width: 1px;
+      }
+      .border-b-2 {
+        border-bottom-width: 2px;
+      }
+      .border-\[\#F8F4FF\] {
+        --tw-border-opacity: 1;
+        border-color: rgb(248 244 255 / var(--tw-border-opacity));
+      }
+      .border-\[\#f8f4ff\] {
+        --tw-border-opacity: 1;
+        border-color: rgb(248 244 255 / var(--tw-border-opacity));
+      }
+      .border-black {
+        --tw-border-opacity: 1;
+        border-color: rgb(0 0 0 / var(--tw-border-opacity));
+      }
+      .border-cGray {
+        --tw-border-opacity: 1;
+        border-color: rgb(205 205 205 / var(--tw-border-opacity));
+      }
+      .border-main {
+        --tw-border-opacity: 1;
+        border-color: rgb(153 233 165 / var(--tw-border-opacity));
+      }
+      .border-transparent {
+        border-color: transparent;
+      }
+      .border-b-black {
+        --tw-border-opacity: 1;
+        border-bottom-color: rgb(0 0 0 / var(--tw-border-opacity));
+      }
+      .bg-\[\#6366f1\] {
+        --tw-bg-opacity: 1;
+        background-color: rgb(99 102 241 / var(--tw-bg-opacity));
+      }
+      .bg-\[\#E5F0FF\] {
+        --tw-bg-opacity: 1;
+        background-color: rgb(229 240 255 / var(--tw-bg-opacity));
+      }
+      .bg-\[\#F8F4FF\] {
+        --tw-bg-opacity: 1;
+        background-color: rgb(248 244 255 / var(--tw-bg-opacity));
+      }
+      .bg-\[\#e6e6e6\] {
+        --tw-bg-opacity: 1;
+        background-color: rgb(230 230 230 / var(--tw-bg-opacity));
+      }
+      .bg-black {
+        --tw-bg-opacity: 1;
+        background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+      }
+      .bg-main {
+        --tw-bg-opacity: 1;
+        background-color: rgb(153 233 165 / var(--tw-bg-opacity));
+      }
+      .bg-red-500 {
+        --tw-bg-opacity: 1;
+        background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+      }
+      .bg-white {
+        --tw-bg-opacity: 1;
+        background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+      }
+      .p-0 {
+        padding: 0px;
+      }
+      .p-2 {
+        padding: 0.5rem;
+      }
+      .p-2\.5 {
+        padding: 0.625rem;
+      }
+      .p-5 {
+        padding: 1.25rem;
+      }
+      .p-\[20px\] {
+        padding: 20px;
+      }
+      .p-\[50px\] {
+        padding: 50px;
+      }
+      .px-1 {
+        padding-left: 0.25rem;
+        padding-right: 0.25rem;
+      }
+      .px-1\.5 {
+        padding-left: 0.375rem;
+        padding-right: 0.375rem;
+      }
+      .px-12 {
+        padding-left: 3rem;
+        padding-right: 3rem;
+      }
+      .px-16 {
+        padding-left: 4rem;
+        padding-right: 4rem;
+      }
+      .px-2 {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+      }
+      .px-2\.5 {
+        padding-left: 0.625rem;
+        padding-right: 0.625rem;
+      }
+      .px-28 {
+        padding-left: 7rem;
+        padding-right: 7rem;
+      }
+      .px-3 {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+      }
+      .px-4 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      .px-5 {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+      }
+      .px-6 {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+      .px-9 {
+        padding-left: 2.25rem;
+        padding-right: 2.25rem;
+      }
+      .px-\[1\.9rem\] {
+        padding-left: 1.9rem;
+        padding-right: 1.9rem;
+      }
+      .px-\[172px\] {
+        padding-left: 172px;
+        padding-right: 172px;
+      }
+      .py-1 {
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+      }
+      .py-1\.5 {
+        padding-top: 0.375rem;
+        padding-bottom: 0.375rem;
+      }
+      .py-16 {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+      }
+      .py-2 {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+      }
+      .py-2\.5 {
+        padding-top: 0.625rem;
+        padding-bottom: 0.625rem;
+      }
+      .py-3 {
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+      }
+      .py-3\.5 {
+        padding-top: 0.875rem;
+        padding-bottom: 0.875rem;
+      }
+      .py-5 {
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem;
+      }
+      .py-\[0\.55rem\] {
+        padding-top: 0.55rem;
+        padding-bottom: 0.55rem;
+      }
+      .py-\[0\.665rem\] {
+        padding-top: 0.665rem;
+        padding-bottom: 0.665rem;
+      }
+      .pb-14 {
+        padding-bottom: 3.5rem;
+      }
+      .pb-2 {
+        padding-bottom: 0.5rem;
+      }
+      .pt-12 {
+        padding-top: 3rem;
+      }
+      .font-sfBold {
+        font-family: sf-bold, sans-serif;
+      }
+      .font-sfMedium {
+        font-family: sf-medium, sans-serif;
+      }
+      .font-sfRegular {
+        font-family: sf-regular, sans-serif;
+      }
+      .text-2xl {
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
+      .text-3xl {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+      }
+      .text-5xl {
+        font-size: 3rem;
+        line-height: 1;
+      }
+      .text-6xl {
+        font-size: 3.75rem;
+        line-height: 1;
+      }
+      .text-\[16px\] {
+        font-size: 16px;
+      }
+      .text-\[18px\] {
+        font-size: 18px;
+      }
+      .text-lg {
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+      }
+      .text-sm {
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+      }
+      .text-xl {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+      }
+      .uppercase {
+        text-transform: uppercase;
+      }
+      .text-\[\#99E9A5\] {
+        --tw-text-opacity: 1;
+        color: rgb(153 233 165 / var(--tw-text-opacity));
+      }
+      .text-cBlack {
+        --tw-text-opacity: 1;
+        color: rgb(35 35 45 / var(--tw-text-opacity));
+      }
+      .text-cGray {
+        --tw-text-opacity: 1;
+        color: rgb(205 205 205 / var(--tw-text-opacity));
+      }
+      .underline {
+        text-decoration-line: underline;
+      }
+      .shadow-DoctorsShadow {
+        --tw-shadow: 0px 39px 16px rgba(216, 223, 233, 0.01),
+          0px 22px 13px rgba(216, 223, 233, 0.05), 0px 10px 10px rgba(216, 223, 233, 0.09),
+          0px 2px 5px rgba(216, 223, 233, 0.1), 0px 0px 0px rgba(216, 223, 233, 0.1);
+        --tw-shadow-colored: 0px 39px 16px var(--tw-shadow-color),
+          0px 22px 13px var(--tw-shadow-color), 0px 10px 10px var(--tw-shadow-color),
+          0px 2px 5px var(--tw-shadow-color), 0px 0px 0px var(--tw-shadow-color);
+        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000),
+          var(--tw-shadow);
+      }
+      .shadow-OurShadow {
+        --tw-shadow: 12.8976px 1px 30px rgba(229, 233, 246, 0.5);
+        --tw-shadow-colored: 12.8976px 1px 30px var(--tw-shadow-color);
+        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000),
+          var(--tw-shadow);
+      }
+      .outline-none {
+        outline: 2px solid transparent;
+        outline-offset: 2px;
+      }
+      .transition {
+        transition-property: color, background-color, border-color, text-decoration-color, fill,
+          stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+        transition-property: color, background-color, border-color, text-decoration-color, fill,
+          stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+        transition-property: color, background-color, border-color, text-decoration-color, fill,
+          stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
+
+      @font-face {
+        font-family: 'sf-regular';
+        src: url('/fonts/SF-Pro-Display-Regular.ttf');
+      }
+      @font-face {
+        font-family: 'sf-medium';
+        src: url('/fonts/SF-Pro-Display-Medium.ttf');
+      }
+      @font-face {
+        font-family: 'sf-bold';
+        src: url('/fonts/SF-Pro-Display-Bold.ttf');
+      }
+      @media (min-width: 1280px) {
+        .xl\:container {
+          width: 100%;
+        }
+
+        @media (min-width: 1440px) {
+          .xl\:container {
+            max-width: 1440px;
+          }
+        }
+      }
+      .before\:absolute::before {
+        content: var(--tw-content);
+        position: absolute;
+      }
+      .before\:-left-0::before {
+        content: var(--tw-content);
+        left: -0px;
+      }
+      .before\:-left-0\.5::before {
+        content: var(--tw-content);
+        left: -0.125rem;
+      }
+      .before\:-top-0::before {
+        content: var(--tw-content);
+        top: -0px;
+      }
+      .before\:-top-0\.5::before {
+        content: var(--tw-content);
+        top: -0.125rem;
+      }
+      @keyframes ping {
+        75%,
+        100% {
+          content: var(--tw-content);
+          transform: scale(2);
+          opacity: 0;
+        }
+      }
+      .before\:animate-ping::before {
+        content: var(--tw-content);
+        animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+      }
+      .before\:rounded-full::before {
+        content: var(--tw-content);
+        border-radius: 9999px;
+      }
+      .before\:border::before {
+        content: var(--tw-content);
+        border-width: 1px;
+      }
+      .before\:border-white::before {
+        content: var(--tw-content);
+        --tw-border-opacity: 1;
+        border-color: rgb(255 255 255 / var(--tw-border-opacity));
+      }
+      .before\:px-3::before {
+        content: var(--tw-content);
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+      }
+      .before\:py-3::before {
+        content: var(--tw-content);
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+      }
+      .hover\:shadow-3xl:hover {
+        --tw-shadow: -5px 76px 31px rgba(191, 191, 191, 0.01),
+          -3px 43px 26px rgba(191, 191, 191, 0.05), -1px 19px 19px rgba(191, 191, 191, 0.09),
+          0px 5px 10px rgba(191, 191, 191, 0.1), 0px 0px 0px rgba(191, 191, 191, 0.1);
+        --tw-shadow-colored: -5px 76px 31px var(--tw-shadow-color),
+          -3px 43px 26px var(--tw-shadow-color), -1px 19px 19px var(--tw-shadow-color),
+          0px 5px 10px var(--tw-shadow-color), 0px 0px 0px var(--tw-shadow-color);
+        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000),
+          var(--tw-shadow);
+      }
+      .group:hover .group-hover\:text-black {
+        --tw-text-opacity: 1;
+        color: rgb(0 0 0 / var(--tw-text-opacity));
+      }
+      .group:hover .group-hover\:text-cBlack {
+        --tw-text-opacity: 1;
+        color: rgb(35 35 45 / var(--tw-text-opacity));
+      }
+    </style>
+  </head>
+  <body class="font-sfRegular">
+    <div id="app" data-v-app="">
+      <header class="mx-auto flex items-center justify-center xl:container">
+        <div
+          class="bottom-0 z-10 mt-5 flex w-full items-center justify-around rounded-[2.5rem] bg-white px-6 py-2.5"
+        >
+          <a href="/" class=""><img src="/src/assets/logo.svg" alt="Logotype" /></a>
+          <ul class="flex w-2/4 justify-around font-sfMedium">
+            <li><a href="#Asosiy" class="">Asosiy</a></li>
+            <li><a href="#Xizmatlar" class="">Xizmatlar</a></li>
+            <li><a href="#Sharhlar" class="">Sharhlar</a></li>
+            <li>
+              <a href="#Shifokor topish" class="pointer-events-none border-b border-black"
+                >Shifokor topish</a
+              >
+            </li>
+            <li><a href="#Maqolalar" class="">Maqolalar</a></li>
+            <li><a href="#Biz haqimizda" class="">Biz haqimizda</a></li>
+          </ul>
+          <div class="flex items-center gap-4">
+            <a href="#" class="text-md rounded-[3rem] border bg-main px-5 py-2 text-[18px]"
+              >Ro'yhatdan o'tish </a
+            ><select
+              class="rounded-3xl border border-main px-4 py-3 text-[18px] uppercase outline-none"
+            >
+              <option value="uzb">uzb</option>
+              <option value="rus">rus</option>
+            </select>
+          </div>
+        </div>
+      </header>
+      <div class="m-auto flex max-w-[1090px] flex-col items-start justify-start">
+        <div class="flex w-full flex-col justify-between">
+          <h1
+            class="mb-12 mt-20 flex w-full items-start justify-start border border-b-2 border-transparent border-b-black pb-14 font-sfBold text-5xl"
+          >
+            Shifokor topish
+          </h1>
+          <div class="flex w-full justify-between">
+            <a
+              class="text-md flex items-center justify-center rounded-[1.25rem] border border-transparent bg-main px-[1.9rem] py-[0.665rem] font-sfMedium text-[18px]"
+              href="#"
+              >Barcha shifokorlar</a
+            ><a
+              class="text-md flex items-center justify-center rounded-[1.25rem] border border-transparent bg-[#F8F4FF] px-[1.9rem] py-[0.665rem] font-sfMedium text-[18px]"
+              href="#"
+              >Terapevt</a
+            ><a
+              class="text-md flex items-center justify-center rounded-[1.25rem] border border-transparent bg-[#F8F4FF] px-[1.9rem] py-[0.665rem] font-sfMedium text-[18px]"
+              href="#"
+              >Nevrolog</a
+            ><a
+              class="text-md flex items-center justify-center rounded-[1.25rem] border border-transparent bg-[#F8F4FF] px-[1.9rem] py-[0.665rem] font-sfMedium text-[18px]"
+              href="#"
+              >Xirurg</a
+            ><a
+              class="text-md flex items-center justify-center rounded-[1.25rem] border border-transparent bg-[#F8F4FF] px-[1.9rem] py-[0.665rem] font-sfMedium text-[18px]"
+              href="#"
+              >Urolog</a
+            ><a
+              class="text-md flex items-center justify-center rounded-[1.25rem] border border-transparent bg-[#F8F4FF] px-[1.9rem] py-[0.665rem] font-sfMedium text-[18px]"
+              href="#"
+              >Stamotolog</a
+            ><a
+              class="text-md flex items-center justify-center rounded-[1.25rem] border border-transparent bg-[#F8F4FF] px-[1.9rem] py-[0.665rem] font-sfMedium text-[18px]"
+              href="#"
+              >+38</a
+            >
+          </div>
+        </div>
+        <div class="mt-20 flex flex-wrap items-center justify-between gap-10">
+          <div
+            class="group flex h-[473px] max-w-[320px] flex-col items-center rounded-3xl shadow-DoctorsShadow"
+          >
+            <img class="rounded-2xl" src="/src/assets/doctors/item-1.jpg" alt="Natalya Levina" />
+            <div class="w-full px-5 py-2">
+              <h6 class="m-0 p-0 font-sfBold text-xl">Natalya Levina</h6>
+              <span class="w-full text-lg text-cGray">Ortodont</span>
+              <div class="mt-5 text-sm text-cGray group-hover:text-black">
+                Bu bolalik orzusi edi, yoshligimdan shifokor bo'lishimni aniq bilardim. Barchangizni
+                berib, odamlarga yordam bering. . . . .
+              </div>
+              <div class="mt-6 flex gap-4">
+                <a href="/FindDoctorInfo" class="text-cGray group-hover:text-cBlack">Batafsil</a
+                ><img
+                  class="text-cGray group-hover:text-cBlack"
+                  src="/src/assets/service/arrow.svg"
+                  alt="Arrow"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="group flex h-[473px] max-w-[320px] flex-col items-center rounded-3xl shadow-DoctorsShadow"
+          >
+            <img class="rounded-2xl" src="/src/assets/doctors/item-2.jpg" alt="Zuxra Tolipova" />
+            <div class="w-full px-5 py-2">
+              <h6 class="m-0 p-0 font-sfBold text-xl">Zuxra Tolipova</h6>
+              <span class="w-full text-lg text-cGray">Okulist</span>
+              <div class="mt-5 text-sm text-cGray group-hover:text-black">
+                Bu bolalik orzusi edi, yoshligimdan shifokor bo'lishimni aniq bilardim. Barchangizni
+                berib, odamlarga yordam bering. . . . .
+              </div>
+              <div class="mt-6 flex gap-4">
+                <a href="/FindDoctorInfo" class="text-cGray group-hover:text-cBlack">Batafsil</a
+                ><img
+                  class="text-cGray group-hover:text-cBlack"
+                  src="/src/assets/service/arrow.svg"
+                  alt="Arrow"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="group flex h-[473px] max-w-[320px] flex-col items-center rounded-3xl shadow-DoctorsShadow"
+          >
+            <img class="rounded-2xl" src="/src/assets/doctors/item-3.jpg" alt="Alisher Kurbanov" />
+            <div class="w-full px-5 py-2">
+              <h6 class="m-0 p-0 font-sfBold text-xl">Alisher Kurbanov</h6>
+              <span class="w-full text-lg text-cGray">Travmatolog</span>
+              <div class="mt-5 text-sm text-cGray group-hover:text-black">
+                Bu bolalik orzusi edi, yoshligimdan shifokor bo'lishimni aniq bilardim. Barchangizni
+                berib, odamlarga yordam bering. . . . .
+              </div>
+              <div class="mt-6 flex gap-4">
+                <a href="/FindDoctorInfo" class="text-cGray group-hover:text-cBlack">Batafsil</a
+                ><img
+                  class="text-cGray group-hover:text-cBlack"
+                  src="/src/assets/service/arrow.svg"
+                  alt="Arrow"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="group flex h-[473px] max-w-[320px] flex-col items-center rounded-3xl shadow-DoctorsShadow"
+          >
+            <img class="rounded-2xl" src="/src/assets/doctors/item-4.jpg" alt="Barno Odilova" />
+            <div class="w-full px-5 py-2">
+              <h6 class="m-0 p-0 font-sfBold text-xl">Barno Odilova</h6>
+              <span class="w-full text-lg text-cGray">Ginekolog</span>
+              <div class="mt-5 text-sm text-cGray group-hover:text-black">
+                Bu bolalik orzusi edi, yoshligimdan shifokor bo'lishimni aniq bilardim. Barchangizni
+                berib, odamlarga yordam bering. . . . .
+              </div>
+              <div class="mt-6 flex gap-4">
+                <a href="/FindDoctorInfo" class="text-cGray group-hover:text-cBlack">Batafsil</a
+                ><img
+                  class="text-cGray group-hover:text-cBlack"
+                  src="/src/assets/service/arrow.svg"
+                  alt="Arrow"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="group flex h-[473px] max-w-[320px] flex-col items-center rounded-3xl shadow-DoctorsShadow"
+          >
+            <img class="rounded-2xl" src="/src/assets/doctors/item-5.jpg" alt="Adelyn Kindregan" />
+            <div class="w-full px-5 py-2">
+              <h6 class="m-0 p-0 font-sfBold text-xl">Adelyn Kindregan</h6>
+              <span class="w-full text-lg text-cGray">Travmatolog</span>
+              <div class="mt-5 text-sm text-cGray group-hover:text-black">
+                Bu bolalik orzusi edi, yoshligimdan shifokor bo'lishimni aniq bilardim. Barchangizni
+                berib, odamlarga yordam bering. . . . .
+              </div>
+              <div class="mt-6 flex gap-4">
+                <a href="/FindDoctorInfo" class="text-cGray group-hover:text-cBlack">Batafsil</a
+                ><img
+                  class="text-cGray group-hover:text-cBlack"
+                  src="/src/assets/service/arrow.svg"
+                  alt="Arrow"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="group flex h-[473px] max-w-[320px] flex-col items-center rounded-3xl shadow-DoctorsShadow"
+          >
+            <img class="rounded-2xl" src="/src/assets/doctors/item-6.jpg" alt="Gabrielle Kirylo" />
+            <div class="w-full px-5 py-2">
+              <h6 class="m-0 p-0 font-sfBold text-xl">Gabrielle Kirylo</h6>
+              <span class="w-full text-lg text-cGray">Travmatolog</span>
+              <div class="mt-5 text-sm text-cGray group-hover:text-black">
+                Bu bolalik orzusi edi, yoshligimdan shifokor bo'lishimni aniq bilardim. Barchangizni
+                berib, odamlarga yordam bering. . . . .
+              </div>
+              <div class="mt-6 flex gap-4">
+                <a href="/FindDoctorInfo" class="text-cGray group-hover:text-cBlack">Batafsil</a
+                ><img
+                  class="text-cGray group-hover:text-cBlack"
+                  src="/src/assets/service/arrow.svg"
+                  alt="Arrow"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="group flex h-[473px] max-w-[320px] flex-col items-center rounded-3xl shadow-DoctorsShadow"
+          >
+            <img class="rounded-2xl" src="/src/assets/doctors/item-7.jpg" alt=" Cameron Androsky" />
+            <div class="w-full px-5 py-2">
+              <h6 class="m-0 p-0 font-sfBold text-xl">Cameron Androsky</h6>
+              <span class="w-full text-lg text-cGray">Travmatolog</span>
+              <div class="mt-5 text-sm text-cGray group-hover:text-black">
+                Bu bolalik orzusi edi, yoshligimdan shifokor bo'lishimni aniq bilardim. Barchangizni
+                berib, odamlarga yordam bering. . . . .
+              </div>
+              <div class="mt-6 flex gap-4">
+                <a href="/FindDoctorInfo" class="text-cGray group-hover:text-cBlack">Batafsil</a
+                ><img
+                  class="text-cGray group-hover:text-cBlack"
+                  src="/src/assets/service/arrow.svg"
+                  alt="Arrow"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="group flex h-[473px] max-w-[320px] flex-col items-center rounded-3xl shadow-DoctorsShadow"
+          >
+            <img class="rounded-2xl" src="/src/assets/doctors/item-8.jpg" alt="Fannie Hunnings" />
+            <div class="w-full px-5 py-2">
+              <h6 class="m-0 p-0 font-sfBold text-xl">Fannie Hunnings</h6>
+              <span class="w-full text-lg text-cGray">Travmatolog</span>
+              <div class="mt-5 text-sm text-cGray group-hover:text-black">
+                Bu bolalik orzusi edi, yoshligimdan shifokor bo'lishimni aniq bilardim. Barchangizni
+                berib, odamlarga yordam bering. . . . .
+              </div>
+              <div class="mt-6 flex gap-4">
+                <a href="/FindDoctorInfo" class="text-cGray group-hover:text-cBlack">Batafsil</a
+                ><img
+                  class="text-cGray group-hover:text-cBlack"
+                  src="/src/assets/service/arrow.svg"
+                  alt="Arrow"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="group flex h-[473px] max-w-[320px] flex-col items-center rounded-3xl shadow-DoctorsShadow"
+          >
+            <img class="rounded-2xl" src="/src/assets/doctors/item-9.jpg" alt="Malia Kitsmiller" />
+            <div class="w-full px-5 py-2">
+              <h6 class="m-0 p-0 font-sfBold text-xl">Malia Kitsmiller</h6>
+              <span class="w-full text-lg text-cGray">Travmatolog</span>
+              <div class="mt-5 text-sm text-cGray group-hover:text-black">
+                Bu bolalik orzusi edi, yoshligimdan shifokor bo'lishimni aniq bilardim. Barchangizni
+                berib, odamlarga yordam bering. . . . .
+              </div>
+              <div class="mt-6 flex gap-4">
+                <a href="/FindDoctorInfo" class="text-cGray group-hover:text-cBlack">Batafsil</a
+                ><img
+                  class="text-cGray group-hover:text-cBlack"
+                  src="/src/assets/service/arrow.svg"
+                  alt="Arrow"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="mt-32 flex items-center justify-between rounded-b-none rounded-t-[50px] rounded-tr-[50px] bg-[#E5F0FF] px-[172px] py-16"
+      >
+        <div class="flex flex-col items-start gap-10">
+          <a href="index.html"
+            ><a href="/" class=""><img src="/src/assets/logo.svg" alt="Logotype" /></a
+          ></a>
+          <div class="flex flex-col gap-5">
+            <span class="max-w-[298px]">Download the app by clicking the link below :</span>
+            <div class="flex gap-10">
+              <a href="#"><img src="/src/assets/google.jpg" alt="Google Play" /></a
+              ><a href="#"><img src="/src/assets/apple.jpg" alt="App Store" /></a>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col items-end gap-5">
+          <h6 class="text-lg">Social media</h6>
+          <div class="flex items-center gap-5">
+            <a href="#"><img src="/src/assets/facebook.svg" alt="Facebook" /></a
+            ><a href="#"><img src="/src/assets/twitter.svg" alt="Twitter" /></a
+            ><a href="#"><img src="/src/assets/linkedin.svg" alt="LinkedIn" /></a
+            ><a href="#"><img src="/src/assets/instagram.svg" alt="Instagram" /></a>
+          </div>
+          <span class="mt-10 text-lg"
+            >© 2023
+            <a class="underline" href="https://www.instagram.com/uzwebblog/"
+              >developer by Ibrakhimzhanov</a
+            >
+            .All Rights Reserved. Co Reg: 685299</span
+          >
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js?t=1686534549581"></script>
+  </body>
+</html>

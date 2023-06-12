@@ -77,7 +77,7 @@ const breakpoints = {
             <a href="#" class="text-cGray group-hover:text-cBlack">{{ label }}</a>
             <img
               class="text-cGray group-hover:text-cBlack"
-              src="../assets/service/arrow.svg"
+              src="@/assets/service/arrow.svg"
               alt="Arrow"
             />
           </div>
