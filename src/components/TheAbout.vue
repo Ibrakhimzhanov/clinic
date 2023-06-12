@@ -22,7 +22,7 @@ import { ABOUT } from '../constants'
       </a>
     </div>
     <div class="relative flex items-end justify-center">
-      <img class="rounded-[40px]" src="../assets/video.png" alt="Video" />
+      <img class="rounded-[40px]" src="@/assets/video.png" alt="Video" />
       <a
         href="#"
         class="text-md absolute bottom-20 flex items-center gap-2 rounded-[1.25rem] bg-main px-6 py-[0.55rem] font-sfMedium text-[18px]"

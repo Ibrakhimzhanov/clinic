@@ -71,10 +71,10 @@ function handleAccordion(selectedIndex) {
           >
             {{ question.title }}
             <div v-if="questions[index].isExpanded">
-              <img src="../assets/minus.svg" alt="Minus" />
+              <img src="@/assets/minus.svg" alt="Minus" />
             </div>
             <div v-else>
-              <img src="../assets/plus.svg" alt="Plus" />
+              <img src="@/assets/plus.svg" alt="Plus" />
             </div>
           </button>
 
@@ -85,8 +85,6 @@ function handleAccordion(selectedIndex) {
           </Collapse>
         </div>
       </div>
-      <!-- <img src="../assets/map.jpg" alt="Map" /> -->
-      <!-- <img src="../assets/questions.jpg" alt="Question" /> -->
     </div>
   </div>
 </template>

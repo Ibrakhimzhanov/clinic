@@ -78,7 +78,7 @@ import { FEEDBACK } from '../constants'
         </div>
       </Slide>
     </Carousel> -->
-    <img src="../assets/feedback.jpg" alt="Feedback from our customers" />
+    <img src="@/assets/feedback.jpg" alt="Feedback from our customers" />
   </div>
 </template>
 <style scoped></style>
