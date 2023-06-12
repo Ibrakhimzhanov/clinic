@@ -54,7 +54,7 @@ const activeProfession = ref('Barcha shifokorlar')
             >
             <img
               class="text-cGray group-hover:text-cBlack"
-              src="../assets/service/arrow.svg"
+              src="@/assets/service/arrow.svg"
               alt="Arrow"
             />
           </div>

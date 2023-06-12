@@ -2,7 +2,7 @@
   <div class="m-auto flex max-w-[1090px] items-center justify-around p-[50px]">
     <div class="flex w-full justify-between">
       <div class="flex flex-col gap-5">
-        <img src="../assets/barno.png" alt="Barno Odilova" />
+        <img src="@/assets/barno.png" alt="Barno Odilova" />
         <router-link
           to="/findDoctorThanks"
           href="#"
