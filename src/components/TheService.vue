@@ -1,10 +1,10 @@
 <script setup>
 import SectionHeading from '@/components/SectionHeading.vue'
 import { serviceItems } from '@/data.js'
-import { SERVICE } from '../constants'
+import { SERVICE } from '@/constants'
 </script>
 <template>
-  <SectionHeading class="mt-32" title="Bizning xizmatlar" />
+  <SectionHeading :id="SERVICE" class="mt-32" title="Bizning xizmatlar" />
   <div class="m-auto my-[110px] mt-12 flex max-w-[1060px] flex-wrap justify-between gap-12">
     <div
       v-for="{ id, label, title, icon } in serviceItems"

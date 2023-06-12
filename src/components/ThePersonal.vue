@@ -1,8 +1,8 @@
 <script setup>
 import SectionHeading from '@/components/SectionHeading.vue'
-import { personals } from '../data'
+import { personals } from '@/data'
 import PersonalItem from '@/components/PersonalItem.vue'
-import { FIND_DOCTOR } from '../constants'
+import { FIND_DOCTOR } from '@/constants'
 </script>
 <template>
   <SectionHeading :id="FIND_DOCTOR" title="Shifokor topish" />

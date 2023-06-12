@@ -1,7 +1,7 @@
 <script setup>
 import SectionHeading from '@/components/SectionHeading.vue'
 import { ref } from 'vue'
-import { doctors } from '../data'
+import { doctors } from '@/data'
 const services = [
   'Barcha shifokorlar',
   'Terapevt',

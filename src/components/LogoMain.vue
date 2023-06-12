@@ -1,11 +1,5 @@
-<script setup>
-// import { ref } from 'vue'
-
-// const currentPage = ref(window.location.hash.slice(1))
-</script>
-
 <template>
-  <router-link :to="{ name: 'Home' }" @click="currentPage">
+  <router-link :to="{ name: 'Home' }">
     <img src="@/assets/logo.svg" alt="Logotype" />
   </router-link>
 </template>

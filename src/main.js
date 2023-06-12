@@ -3,6 +3,7 @@ import App from './App.vue'
 import MainPage from './components/TheMainPage.vue'
 import FindDoctor from './pages/FindDoctor.vue'
 import FindDoctorInfo from './pages/FindDoctorInfo.vue'
+import FindDoctorAppointment from './pages/FindDoctorAppointment.vue'
 // import TheOurPartner from '@/components/TheOurPartner.vue'
 // import TheAbout from '@/components/TheAbout.vue'
 // import ThePersonal from '@/components/ThePersonal.vue'
@@ -21,6 +22,36 @@ const router = createRouter({
       component: MainPage
     },
     {
+      path: '/#Asosiy',
+      name: 'Asosiy',
+      component: MainPage
+    },
+    {
+      path: '/#Xizmatlar',
+      name: 'Xizmatlar',
+      component: MainPage
+    },
+    {
+      path: '/#Sharhlar',
+      name: 'Sharhlar',
+      component: MainPage
+    },
+    {
+      path: '/#Shifokor%20topish',
+      name: 'Shifokor topish',
+      component: MainPage
+    },
+    {
+      path: '/#Maqolalar',
+      name: 'Maqolalar',
+      component: MainPage
+    },
+    {
+      path: '/#Biz%20haqimizda',
+      name: 'Biz haqimizda',
+      component: MainPage
+    },
+    {
       path: '/findDoctor',
       name: 'Shifokor Topish',
       component: FindDoctor
@@ -29,6 +60,11 @@ const router = createRouter({
       path: '/findDoctorInfo',
       name: 'Shifokor Batafsil',
       component: FindDoctorInfo
+    },
+    {
+      path: '/findDoctorAppointment',
+      name: 'Shifokor Qabuliga yozilish',
+      component: FindDoctorAppointment
     }
   ],
   history: createWebHistory()

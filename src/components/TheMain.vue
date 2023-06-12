@@ -1,8 +1,9 @@
 <script setup>
-import { descriptions } from '../data.js'
+import { descriptions } from '@/data.js'
+import { MAIN } from '@/constants'
 </script>
 <template>
-  <main class="mx-auto flex h-full flex-col items-center justify-between xl:container">
+  <main :id="MAIN" class="mx-auto flex h-full flex-col items-center justify-between xl:container">
     <div class="flex h-full w-full items-center justify-end">
       <div class="absolute left-80 top-20">
         <img src="@/assets/doc.svg" alt="Doctor" />
