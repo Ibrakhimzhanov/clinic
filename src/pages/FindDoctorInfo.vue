@@ -4,8 +4,7 @@
       <div class="flex flex-col gap-5">
         <img src="@/assets/barno.png" alt="Barno Odilova" />
         <router-link
-          to="/findDoctorAppointment"
-          href="#"
+          to="find-doc-appointment"
           class="flex items-center justify-center rounded-[20px] border border-transparent bg-main px-[1.9rem] py-[0.665rem] text-lg"
         >
           Qabulga yozilish

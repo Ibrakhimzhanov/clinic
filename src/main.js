@@ -1,75 +1,65 @@
 import { createApp } from 'vue'
 import App from '@/App.vue'
 import '@/assets/main.css'
-// import MainPage from '@/components/TheMainPage.vue'
-// import FindDoctor from '@/pages/FindDoctor.vue'
-// import FindDoctorInfo from '@/pages/FindDoctorInfo.vue'
-// import FindDoctorAppointment from '@/pages/FindDoctorAppointment.vue'
-// import TheOurPartner from '@/components/TheOurPartner.vue'
-// import TheAbout from '@/components/TheAbout.vue'
-// import ThePersonal from '@/components/ThePersonal.vue'
-// // import TheHeader from '@/components/TheHeader.vue'
-// import TheArticles from '@/components/TheArticles.vue'
-// import TheFeedback from '@/components/TheFeedback.vue'
-// import TheContacts from '@/components/TheContacts.vue'
-// import { createRouter, createWebHistory } from 'vue-router'
+import TheMainPage from '@/components/TheMainPage.vue'
 
-// const router = createRouter({
-//   routes: [
-//     {
-//       path: '/',
-//       name: 'Home',
-//       component: MainPage
-//     },
-//     {
-//       path: '/#Asosiy',
-//       name: 'Asosiy',
-//       component: MainPage
-//     },
-//     {
-//       path: '/#Xizmatlar',
-//       name: 'Xizmatlar',
-//       component: MainPage
-//     },
-//     {
-//       path: '/#Sharhlar',
-//       name: 'Sharhlar',
-//       component: MainPage
-//     },
-//     {
-//       path: '/#Shifokor%20topish',
-//       name: 'Shifokor topish',
-//       component: MainPage
-//     },
-//     {
-//       path: '/#Maqolalar',
-//       name: 'Maqolalar',
-//       component: MainPage
-//     },
-//     {
-//       path: '/#Biz%20haqimizda',
-//       name: 'Biz haqimizda',
-//       component: MainPage
-//     },
-//     {
-//       path: '/findDoctor',
-//       name: 'Shifokor Topish',
-//       component: FindDoctor
-//     },
-//     {
-//       path: '/findDoctorInfo',
-//       name: 'Shifokor Batafsil',
-//       component: FindDoctorInfo
-//     },
-//     {
-//       path: '/findDoctorAppointment',
-//       name: 'Shifokor Qabuliga yozilish',
-//       component: FindDoctorAppointment
-//     }
-//   ],
-//   history: createWebHistory()
-// })
+const navItems = [
+  'Asosiy',
+  'Xizmatlar',
+  'Sharhlar',
+  'Shifokor topish',
+  'Maqolalar',
+  'Biz haqimizda'
+]
+import { createRouter, createWebHistory } from 'vue-router'
+
+const router = createRouter({
+  routes: [
+    {
+      path: '/',
+      name: 'Home',
+      component: TheMainPage
+    },
+    {
+      path: '/find-doc',
+      component: () => import('@/pages/FindDoctor.vue')
+    },
+    {
+      path: '/find-doc-info',
+      component: () => import('@/pages/FindDoctorInfo.vue')
+    },
+    {
+      path: '/find-doc-appointment',
+      component: () => import('@/pages/FindDoctorAppointment.vue')
+    },
+    {
+      path: '/Asosiy',
+      component: () => import('@/components/TheMainPage.vue')
+    },
+    {
+      path: '/Xizmatlar',
+      component: () => import('@/components/TheService.vue')
+    },
+    {
+      path: '/Sharhlar',
+      component: () => import('@/components/TheFeedback.vue')
+    },
+    {
+      path: '/Shifokor topish',
+      component: () => import('@/components/TheFindDoc.vue')
+    },
+    {
+      path: '/Maqolalar',
+      component: () => import('@/components/TheArticles.vue')
+    },
+    {
+      path: '/Biz haqimizda',
+      component: () => import('@/components/TheAbout.vue')
+    }
+  ],
+  history: createWebHistory()
+})
 
 const app = createApp(App)
-// app.use(router)
+app.use(router)
 app.mount('#app')

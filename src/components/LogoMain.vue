@@ -1,5 +1,5 @@
 <template>
-  <a href="#Asosiy">
+  <router-link to="/Asosiy">
     <img src="@/assets/logo.svg" alt="Logotype" />
-  </a>
+  </router-link>
 </template>

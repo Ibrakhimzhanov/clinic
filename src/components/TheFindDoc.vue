@@ -10,11 +10,11 @@ import { FIND_DOCTOR } from '@/constants'
     <div class="flex w-[1310px] justify-between rounded-3xl bg-[#F8F4FF] px-28 pb-2 pt-12">
       <PersonalItem v-for="item in personals" :key="item.path" :item="item" />
     </div>
-    <a
-      href="/FindDoc.html"
+    <router-link
+      to="find-doc"
       class="text-md flex items-center justify-center rounded-[1.25rem] border bg-main px-[1.9rem] py-[0.665rem] font-sfMedium text-[18px]"
     >
       Barchasini ko’rish
-    </a>
+    </router-link>
   </div>
 </template>

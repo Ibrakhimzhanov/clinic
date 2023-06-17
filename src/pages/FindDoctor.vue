@@ -49,7 +49,7 @@ const activeProfession = ref('Barcha shifokorlar')
             berib, odamlarga yordam bering. . . . .
           </div>
           <div class="mt-6 flex gap-4">
-            <router-link to="/FindDoctorInfo" class="text-cGray group-hover:text-cBlack"
+            <router-link to="find-doc-info" class="text-cGray group-hover:text-cBlack"
               >Batafsil</router-link
             >
             <img

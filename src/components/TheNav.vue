@@ -1,24 +1,24 @@
 <script setup>
 import LogoMain from '@/components/LogoMain.vue'
 import NavItem from '@/components/NavItem.vue'
-import { ref } from 'vue'
+// import { ref } from 'vue'
 import { MAIN, SERVICE, FEEDBACK, FIND_DOCTOR, ARTICLES, ABOUT } from '../constants.js'
 
 const navItems = [MAIN, SERVICE, FEEDBACK, FIND_DOCTOR, ARTICLES, ABOUT]
 
-const currentPage = ref(normalizePageHash())
+// const currentPage = ref(normalizePageHash())
 
-function normalizePageHash() {
-  const hash = window.location.hash.slice(1)
+// function normalizePageHash() {
+//   const hash = window.location.hash.slice(1)
 
-  if (navItems.includes(hash)) {
-    return hash
-  }
+//   if (navItems.includes(hash)) {
+//     return hash
+//   }
 
-  window.location.hash = MAIN
+//   window.location.hash = MAIN
 
-  return MAIN
-}
+//   return MAIN
+// }
 </script>
 
 <template>
@@ -27,13 +27,7 @@ function normalizePageHash() {
   >
     <LogoMain />
     <ul class="flex w-2/4 justify-around font-sfMedium">
-      <NavItem
-        :href="`#${page}`"
-        v-for="page in navItems"
-        :key="page"
-        :class="{ 'pointer-events-none border-b border-black': page === currentPage }"
-        @click="currentPage = page"
-      >
+      <NavItem :to="`/${page}`" v-for="page in navItems" :key="page">
         {{ page }}
       </NavItem>
     </ul>
